@@ -48,7 +48,7 @@ def plot_label_contributions(data, layer_name, color, percentile=5, y_lim=None):
     
     xtick=[0, 50, 100, 150, 200, 250, 300]
     current_xticks = list(np.array(xtick)) + [threshold_index]
-    plt.xticks(sorted(set(current_xticks)))  # 중복을 제거하고 정렬하여 설정
+    plt.xticks(sorted(set(current_xticks)))  
 
     plt.xlabel('Component number (i)')
     plt.ylabel('Label Contributions')
@@ -78,7 +78,7 @@ def csv_label_contributions(data, layer_name, color, percentile=5, y_lim=None):
 
     # CSV 파일로 저장
     res_dir = '/opt/workspace/Seohyeon/Journal/DMFMS/result_viz_label_contributions/'
-    file_name = f'CSV_label_contribution_{layer_name}.csv'  # 원하는 파일 이름으로 변경하세요.
+    file_name = f'CSV_label_contribution_{layer_name}.csv' 
     if args.Scaler:
         file_path = f'{res_dir}/scaled_{file_name}'
     else:
