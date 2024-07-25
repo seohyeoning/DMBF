@@ -12,7 +12,7 @@ from Helpers.Variables import device, METRICS, DATASET_DIR, WD, FILENAME_FOLDRES
 from Helpers.Helpers_2cl import data_generate, BIODataset, BIODataLoader 
 from sklearn.manifold import TSNE
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D  # 3D plot을 위해 필요
+from mpl_toolkits.mplot3d import Axes3D  
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torchvision.transforms as T
@@ -20,9 +20,9 @@ from Models.Model_v4_feature_map import Net
 import umap
   
 def plot_features_3d(feat_3d_list, labels, save_dir):
-    label_colors = {0: 'skyblue', 1: 'navy'}  # 수정된 색상
+    label_colors = {0: 'skyblue', 1: 'navy'} 
     label_names = {0: 'alert', 1: 'drowsy'}
-    label_markers = {0: 'o', 1: '^'}  # 새로 추가된 마커 설정
+    label_markers = {0: 'o', 1: '^'}  
 
     for i in range(12):
         X_3d = feat_3d_list[i]
@@ -34,7 +34,7 @@ def plot_features_3d(feat_3d_list, labels, save_dir):
         fig = plt.figure(figsize=(10, 7))
         ax = fig.add_subplot(111, projection='3d')
 
-        # 라벨별로 데이터 포인트를 그립니다.
+    
         for label in np.unique(labels):
             idx = np.where(labels == label)
             ax.scatter(X_3d[idx, 0], X_3d[idx, 1], X_3d[idx, 2], 
@@ -51,9 +51,9 @@ def plot_features_3d(feat_3d_list, labels, save_dir):
         plt.close()
 
 def plot_features_2d(feat_2d_list, labels, save_dir):
-    label_colors = {0: 'skyblue', 1: 'navy'}  # 수정된 색상
+    label_colors = {0: 'skyblue', 1: 'navy'} 
     label_names = {0: 'alert', 1: 'drowsy'}
-    label_markers = {0: 'o', 1: '^'}  # 새로 추가된 마커 설정
+    label_markers = {0: 'o', 1: '^'} 
 
 
 
@@ -62,7 +62,7 @@ def plot_features_2d(feat_2d_list, labels, save_dir):
               'Weighted PPG feature', 'Weighted GSR feature', 'Layer 1',
               'Layer 2']
 
-    # i가 0, 1, 2, 3, 4일 때의 피쳐들을 한 figure에 subplot으로 그립니다.
+
     plt.figure(figsize=(20, 14))
     for i in range(5):
         plt.subplot(2, 3, i+1)
@@ -82,7 +82,7 @@ def plot_features_2d(feat_2d_list, labels, save_dir):
     plt.savefig(os.path.join(save_dir, "Input_feature.png"))
     plt.close()
 
-    # i가 10, 11일 때의 피쳐들을 별도의 figure에 subplot으로 그립니다.
+
     plt.figure(figsize=(20, 7))
     for i in range(10, 12):
         plt.subplot(1, 2, i-9)
