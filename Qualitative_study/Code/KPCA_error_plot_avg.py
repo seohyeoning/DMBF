@@ -264,7 +264,7 @@ def Inference(args):
 
     # CSV 파일로 저장
     res_dir = '/opt/workspace/Seohyeon/Journal/DMFMS/result_viz_errors/'
-    file_name = f'{args.classifier}_{args.metric}_by_layer.csv'  # 원하는 파일 이름으로 변경하세요.
+    file_name = f'{args.classifier}_{args.metric}_by_layer.csv'  
     if args.Scaler:
         file_path = f'{res_dir}/scaled_{file_name}'
     else:
