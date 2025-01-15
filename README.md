@@ -32,3 +32,53 @@ Clone the repository and install the dependencies:
 git clone https://github.com/seohyeoning/DMBF.git
 cd DMBF
 pip install -r requirements.txt
+```
+
+### Running the Model
+1. Prepare your biosignal dataset as per the required format (see `data_preprocessing` folder for guidance).
+2. Train the DMBF model:
+   ```bash
+   python train.py --dataset <dataset_name> --epochs 100
+   ```
+3. Evaluate the trained model:
+   ```bash
+   python evaluate.py --model <model_path> --test_data <test_dataset_path>
+   ```
+
+## Project Structure
+```
+DMBF/
+├── Baseline_models/      # Contains baseline implementations
+├── DMBF_Ablation/        # Code for ablation studies
+├── DMBF_Ours/            # Core implementation of the DMBF framework
+├── Qualitative_study/    # Scripts for qualitative analysis
+├── data_preprocessing/   # Data preparation scripts
+├── requirements.txt      # Required Python libraries
+├── train.py              # Training script
+├── evaluate.py           # Evaluation script
+└── README.md             # Project documentation
+```
+
+## Results
+DMBF has been extensively validated across multiple datasets, achieving significant performance improvements over baseline models:
+- Motion Sickness: F1-score = 0.5569
+- Drowsiness: F1-score = 0.7187
+- Distraction: F1-score = 0.6647
+- Sustained Attention: F1-score = 0.8092
+
+The framework demonstrates consistent generalizability and robustness in detecting diverse mental states.
+
+## Contribution Guidelines
+We welcome contributions to enhance the DMBF framework! To contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add a new feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request and describe your changes.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+For any questions or suggestions, feel free to open an issue or contact the contributors.
