@@ -1,6 +1,5 @@
 # Dynamic Multi-Biosignal Fusion (DMBF)
-S.-H. Park et al., "Dynamic Multi-biosignal Fusion for Detecting the Mental States of Drivers and Passengers in Vehicles," Journal of Biomedical and Health Informatics (under review), 2024. 
-
+S.-H. Park, D.-K. Han, G.-D. Jang, S.-W. Lee, “Dynamic Multi-biosignal Fusion for Detecting the Mental States of Drivers and Passengers in Vehicles,” IEEE Journal of Biomedical and Health Informatics, 2025 (Accepted).
 ## Overview
 DMBF is an innovative framework designed for detecting the mental states of drivers and passengers in vehicles. By leveraging multi-modal biosignals such as EEG, ECG, and PPG, the DMBF method provides a robust and reliable solution for real-time mental state monitoring. This approach utilizes a dynamic gate mechanism and spatial-temporal attention to achieve superior classification performance across various scenarios, including motion sickness, drowsiness, and sustained attention.
 
